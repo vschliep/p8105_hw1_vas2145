@@ -19,7 +19,11 @@ data("early_january_weather")
   mean_temp
 ```
 
-```{r}
 
+## Visualizing temperature as a function of time, coded by humidity
+```{r}
+ggplot(early_january_weather,
+  aes(x= time_hour, y = temp, color = humid)) +
+  geom_point()
 ```
 
