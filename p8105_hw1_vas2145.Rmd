@@ -19,7 +19,7 @@ data("early_january_weather")
   mean_temp
 ```
 
-Load the libraries and dataset. The `early_january_weather` dataset contains 15 columns of 358 rows. Variables include the location the temperature reading was taken (EWR), the time (including year, month, day, hour), the temperature, and detailed weather conditions (humidity, wind, precipitation, etc.) All recordings were taken in January of 2013. The mean temperature of recordings is `r mean_temp` degrees.
+Load the libraries and dataset. The `early_january_weather` dataset contains  `r ncol(early_january_weather)` columns of  `r nrow(early_january_weather)` rows. Variables include the location the temperature reading was taken (EWR), the time (including `year`, `month`, `day`, `hour`), the temperature, and detailed weather conditions (`humid`, `wind`, `precipitation`, etc.) All recordings were taken in January of 2013. The mean temperature of recordings is `r mean_temp` degrees.
 
 ### Visualizing temperature as a function of time, coded by humidity
 ```{r}
@@ -41,4 +41,17 @@ homework_df = tibble(
   vec_char = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
   vec_factor = factor(c("level 1", "level 2", "level 3", "level 1", "level 2", "level 3", "level 1", "level 2", "level 3", "level 1")))
 ```
+
+```{r}
+mean_random_sample <- mean(pull(homework_df, random_sample))
+mean_vec_logical <- mean(pull(homework_df, vec_logical))
+mean_vec_char <- mean(pull(homework_df, vec_char))
+mean_vec_factor <- mean(pull(homework_df, vec_factor))
+```
+
+Taking the mean of each variable in the dataset works for `mean_random_sample` and `mean_vec_logical`.
+
+as.numeric(pull(homework_df,vec_logical))
+as.numeric(pull(homework_df,vec_char))
+as.numeric(pull(homework_df,vec_factor))
 
